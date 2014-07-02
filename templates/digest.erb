@@ -1,0 +1,8 @@
+<% @locations.each do |location| -%>
+<Location /<%= location %>>
+  Require valid-user
+  AuthType Digest
+  AuthName "<%= @realm %>"
+  AuthUserFile <%= @htpasswd %>
+</Location>
+<% end -%>
